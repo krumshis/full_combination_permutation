@@ -1,5 +1,5 @@
 # full_combination_permutation
-Find palindromes by traversing all possible combinations and their permutations from input of N strings.
+
 ####Five Dwarves ( Gimli, Fili, Ilif, Ilmig and Mark) met at the Prancing Pony and played a word game to determine which combinations of their names resulted in a palindrome. Write a program in that prints out all of those combinations.
 
 This solution approaches the problem head on, using descrete mathematics - combinations and permutations. It constructs all possible combinations of words from the input set. The order of words in combination is not important, the only restriction is each word can be present only once in a subset. If the size of the whole input set is N, the size r of any combinations can be between 1 and N and there are N!/r!*(N-r)! such combinations for each r from 1 to N. For each combination the program tries all possible permutations, so if the size of a combination/subset is r, the number of possible permutations is r!. Each permutation is checked for being palindromic and if yes - printed to stdout and palindrome count is increased. The original input is sorted in ascending order to allow for usage of std::next_permutation. Obviously, this approach is extremely time consuming, however it guarantees full set of results regardless of input type.
